@@ -7,7 +7,7 @@ The project was build starting from prof. Cavaleses [project requirements](https
 ## application domain
 
 ### The HHGTTG in universe Lore Repository 
-We are interested in the Guide that contains entrys helpfull for navigating the universe, such entrys have to be devided in the entries regarding persons of interest, entries regarding planets, entries regarding spicies and general entries. Only approved Authors may add entries to the Guide. People of interest may be given a score, to quickly identify how important they are. It is also of interest witch organisations they may lead. In addition we are interessed in the travelers using our guide, wich may rate planets they visited on a scale form 0 to 100. We want to know the planet of origin of the travelers, the spicies they belong to, whitch planets they visited, when they visited it and the spacecreaft they used to do so.
+We are interested in the Guide that contains entries helpful for navigating the universe, such entries have to be divided in the entries regarding persons of interest, entries regarding planets, entries regarding species and general entries. Only approved Authors may add entries to the Guide. People of interest may be given a score, to quickly identify how important they are. It is also of interest witch organisations they may lead. In addition we are interessed in the travelers using our guide, wich may rate planets they visited on a scale form 0 to 100. We want to know the planet of origin of the travelers, the species they belong to, witch planets they visited, when they visited it and the spacecraft they used to do so.
 
 ### requirements
 
@@ -22,8 +22,6 @@ We are interested in the Guide that contains entrys helpfull for navigating the 
 9. The specification should include a workload of the most common queries and operations (between 5 and 10) that are of interest in the modeled domain, with an indication of their frequency.
 
 ### glossary 
-
-<!-- TODO -->
 
 ### diagram of the conceptual schema
 ![ER-Diagramm](er-diagramm.svg)
