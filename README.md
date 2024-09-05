@@ -6,9 +6,8 @@ The project was build starting from prof. Cavaleses [project requirements](https
 
 ## application domain
 
-The HHGTTG Lore Repository will be a database designed to catalog and explore the vast universe of The Hitchhiker's Guide to the Galaxy. It serves as reference, containing entries on characters, planets and ships from the HHGTTG universe. Whether you're searching for information on the Infinite Improbability Drive or curious about the serie's characters, this repository this repository aims to collect all there is to know about rich lore of Douglas Adams' iconic universe.
-
-## conceptual design
+### The HHGTTG in universe Lore Repository 
+We are interested in the Guide that contains entrys helpfull for navigating the universe, such entrys have to be devided in the entries regarding persons of interest, entries regarding planets, entries regarding spicies and general entries. Only approved Authors may add entries to the Guide. People of interest may be given a score, to quickly identify how important they are. It is also of interest witch organisations they may lead. In addition we are interessed in the travelers using our guide, wich may rate planets they visited on a scale form 0 to 100. We want to know the planet of origin of the travelers, the spicies they belong to, whitch planets they visited, when they visited it and the spacecreaft they used to do so.
 
 ### requirements
 
@@ -27,130 +26,10 @@ The HHGTTG Lore Repository will be a database designed to catalog and explore th
 <!-- TODO -->
 
 ### diagram of the conceptual schema
-
-```mermaid
----
-title: Hitchhiker's Guide to the Galaxy DB
----
-erDiagram
-
-    t[Traveler] {
-        int traveler_id PK
-        string name
-        int home_planet FK
-        int favurite_planet FK
-        string spicies FK
-    }
-
-    a[Author] {
-        int author_id PK
-        string name
-        int home_planet FK
-        string spicies FK
-    }
-    
-    j[Journey] {
-        int traveller PK
-        int spacecraft PK
-        date startdate PK
-    }
-
-
-    s[Species] {
-        string name PK
-        string home_planet
-        string traits
-        int avr_lifespan
-    }
-
-    p[Planet] {
-        int planet_id 
-        string name 
-        int sector
-        string climate
-        int population
-        string description
-        float rating 
-    }
-
-
-    sp[Spacecraft] {
-        int id PK
-        string model
-        string organisation FK
-        int max_spead
-        int max_passengers
-    }
-
-    e[Entry] {
-        int entry_id PK
-        string text
-    }
-    pe[PlanetEntry]{
-        int entry_id PK
-        int planet_id FK
-    }
-    se[SpeciesEntry] {
-        int entry_id PK
-        string name FK
-    }
-
-    o[Organisation] {
-        string name PK
-        string headquoters FK
-        string leader
-    }
-
-    e ||--o| pe : isA
-    e ||--o| se : isA
-    a }|--|{ e : writes
-    s }o--|{ p : inhabitats
-    t ||--|| p : inhabited
-    t ||--|| p : prefers
-    t ||--o{ j : makes
-    sp ||--o{ j : flies
-    o ||--o{ sp : produces
-    t ||--|| s : belongs
-
-
-
-```
-
-
+![ER-Diagramm](er-diagramm.svg)
 
 ### data dictionary
 
 #### Main Entities:
-
-Planet
-- Attributes: PlanetID, Name, Sector, Climate, Population, Description, GuideRating
-- Multi-valued Attribute: TouristAttractions (List of key attractions on the planet)
-
-Species
-- Attributes: Name, HomePlanet, PhysicalTraits, AverageLifespan
-<!-- - Optional Attribute: LanguagesSpoken (Species may speak multiple or no languages) -->
-
-Spacecraft
-- Attributes: SpacecraftID, Model, Manufacturer, MaxSpeed, FuelType, PassengerCapacity
-- Multi-valued Attribute: Amenities (List of amenities available on the spacecraft)
-
-Traveler
-- Attributes: TravelerID, Name, Species, HomePlanet, FavoritePlanet
-- Optional Attribute: GuideSubscriptionLevel (Basic, Advanced, Premium)
-
-Journey
-- Attributes: JourneyID, SpacecraftID, TravelerID, OriginPlanet, DestinationPlanet, DepartureDate, ArrivalDate
-
-KnowledgeEntry
-- Attributes: EntryID, Title, Content, Author, DatePublished, Category
-<!-- - Multi-valued Attribute: Keywords (Keywords associated with the entry) -->
-
-GuideArticle
-- Attributes: ArticleID, Title, PlanetID, Content, Author, DatePublished, UserRating
-<!-- - Optional Attribute: SafetyRating (Some planets might not have a defined safety rating) -->
-
-Corporation (Overseeing various enterprises and travel agencies)
-- Attributes: CorporationID, Name, Headquarters, CEO, NetWorth
-<!-- - Multi-valued Attribute: Subsidiaries (List of companies owned by the corporation) -->
 
 ### table of volumes and table of operations according to the foreseen application load
