@@ -6,8 +6,8 @@ The project was build starting from prof. Cavaleses [project requirements](https
 
 ## application domain
 
-### The HHGTTG in universe Lore Repository 
-We are interested in the Guide that contains entries helpful for navigating the universe, such entries have to be divided in the entries regarding persons of interest, entries regarding planets, entries regarding species and general entries. Only approved Authors may add entries to the Guide. People of interest may be given a score, to quickly identify how important they are. It is also of interest witch organisations they may lead. In addition we are interessed in the travelers using our guide, wich may rate planets they visited on a scale form 0 to 100. We want to know the planet of origin of the travelers, the species they belong to, witch planets they visited, when they visited it and the spacecraft they used to do so.
+### The HHGTTG Repository 
+We are interested in the Guide that contains entries helpful for navigating the universe, such entries have to be divided in the entries regarding persons of interest, entries regarding planets, entries regarding species and general entries. Only approved Authors may add entries to the Guide. People of interest may be given a score, to quickly identify how important they are. It is also of interest which organizations they may lead. In addition, we are interested in the travelers using our guide, which may rate the location they visited on a scale from 0 to 100. We are also interested in the Spacecraft they use to travel, and the name of the organizations that produce such spacecraft. We want to know the planet of origin of the travelers, the species they belong to, which planets they visited, when they visited it and the spacecraft they used to do so.
 
 ### requirements
 
