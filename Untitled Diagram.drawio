@@ -1,9 +1,109 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0" version="24.7.16">
   <diagram name="Page-1" id="bv7UUWNVivqJPUs7qR7V">
-    <mxGraphModel>
+    <mxGraphModel dx="1468" dy="1037" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="UPZO6y9M7WOomMR67U1h-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="UPZO6y9M7WOomMR67U1h-1" target="UPZO6y9M7WOomMR67U1h-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="270" as="sourcePoint" />
+            <mxPoint x="560" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-6" value="import Handelsdaten" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UPZO6y9M7WOomMR67U1h-5">
+          <mxGeometry x="-0.1843" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-1" value="HDS" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="210" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-8" value="i" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="UPZO6y9M7WOomMR67U1h-2" target="UPZO6y9M7WOomMR67U1h-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-9" value="import Competitor data" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UPZO6y9M7WOomMR67U1h-8">
+          <mxGeometry x="-0.4038" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-2" value="RDS" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UPZO6y9M7WOomMR67U1h-4" target="UPZO6y9M7WOomMR67U1h-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-40" value="eralt Bericht" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UPZO6y9M7WOomMR67U1h-39">
+          <mxGeometry x="-0.2221" y="-4" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-4" value="RBS" style="swimlane;whiteSpace=wrap;html=1;startSize=20;" vertex="1" parent="1">
+          <mxGeometry x="350" y="420" width="900" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UPZO6y9M7WOomMR67U1h-4" source="UPZO6y9M7WOomMR67U1h-23" target="UPZO6y9M7WOomMR67U1h-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="110" as="sourcePoint" />
+            <mxPoint x="300" y="123" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-29" value="nur relevannte und auf analysis eingestelte werte" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UPZO6y9M7WOomMR67U1h-12">
+          <mxGeometry x="-0.05" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-22" value="Datenverarbeitung" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="UPZO6y9M7WOomMR67U1h-4">
+          <mxGeometry x="40" y="55" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-23" value="vereinigt Handelsdaten und Kunkurenzdaten in einer tabelle" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UPZO6y9M7WOomMR67U1h-22">
+          <mxGeometry y="26" width="140" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-26" value="Analisys" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="UPZO6y9M7WOomMR67U1h-4">
+          <mxGeometry x="470" y="55" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-27" value="Kalkulirt das risiko für jeden Kontrahenten" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UPZO6y9M7WOomMR67U1h-26">
+          <mxGeometry y="26" width="140" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-30" value="Notification" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="UPZO6y9M7WOomMR67U1h-4">
+          <mxGeometry x="710" y="55" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-31" value="sended den bericht sobald er bereit ist." style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="UPZO6y9M7WOomMR67U1h-30">
+          <mxGeometry y="26" width="140" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="UPZO6y9M7WOomMR67U1h-4" source="UPZO6y9M7WOomMR67U1h-27" target="UPZO6y9M7WOomMR67U1h-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-33" value="send csv report" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UPZO6y9M7WOomMR67U1h-32">
+          <mxGeometry x="-0.03" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-34" value="Externe Risiko parameter" style="whiteSpace=wrap;html=1;" vertex="1" parent="UPZO6y9M7WOomMR67U1h-4">
+          <mxGeometry x="200" y="280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="UPZO6y9M7WOomMR67U1h-4" source="UPZO6y9M7WOomMR67U1h-34" target="UPZO6y9M7WOomMR67U1h-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-44" value="beeinflussen" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UPZO6y9M7WOomMR67U1h-35">
+          <mxGeometry x="0.2159" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-38" value="Singapore HQ" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="UPZO6y9M7WOomMR67U1h-41" target="UPZO6y9M7WOomMR67U1h-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-43" value="legen risicodaten fest" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="UPZO6y9M7WOomMR67U1h-42">
+          <mxGeometry x="-0.0603" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UPZO6y9M7WOomMR67U1h-41" value="Erlaubte Geschäftswender" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="900" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
