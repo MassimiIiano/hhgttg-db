@@ -26,6 +26,13 @@ We are interested in the Guide that contains entries helpful for navigating the 
 ### diagram of the conceptual schema
 ![ER-Diagramm](hhgttg-diagramm.drawio.png)
 
+
+### glossary 
+
+| term   | description | synonym | connections |
+| ------ | ----------- | ------- | ----------- |
+| person | persons travel, write articles andor are vip | individual | spicies, location, spacecraft |
+
 ### data dictionary
 
 #### Main Entities:
