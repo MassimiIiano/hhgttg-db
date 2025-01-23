@@ -24,7 +24,7 @@ We are interested in the Guide that contains entries helpful for navigating the 
 ### glossary 
 
 ### diagram of the conceptual schema
-![ER-Diagramm](er-diagramm.svg)
+![ER-Diagramm](hhgttg-diagramm.drawio.png)
 
 ### data dictionary
 
