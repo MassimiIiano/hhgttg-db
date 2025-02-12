@@ -31,7 +31,21 @@ We are interested in the Guide that contains entries helpful for navigating the 
 
 | term   | description | synonym | connections |
 | ------ | ----------- | ------- | ----------- |
-| person | persons travel, write articles andor are vip | individual | spicies, location, spacecraft |
+| person | persons travel, write articles andor are VIPs | individual | spicies, location, spacecraft |
+| location | planets, stars, space stations | place | person, organisation |
+| spicies | spicies of persons | race | person, location |
+| organisation | organisations that produce spacecraft | company | spacecraft |
+| spacecraft | spacecraft used by persons | ship | person, organisation, location |
+| entry | entries in the guide | article | author |
+| author | authors of entries | writer | entry, person |
+| vip | very important person | important person | person, person_entry |
+| person_entry | rating of a person | rating | vip, entry |
+| location_entry | rating of a location | rating | location, entry |
+| spiceis_entry | rating of a spicies | rating | spicies, entry |
+| planet | planets in the universe | world | location |
+| space_station | space stations in the universe | station | location |
+
+
 
 ### data dictionary
 
