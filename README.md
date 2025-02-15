@@ -9,6 +9,9 @@ The project was build starting from prof. Cavaleses [project requirements](https
 ### The HHGTTG Repository 
 We are interested in the Guide that contains entries helpful for navigating the universe, such entries have to be divided in the entries regarding VIPs (Arthur Dent: A confused Earthman who found himself rather unexpectedly thrust into galactic adventures. Entry notes: “Mostly in search of tea and a decent sandwich.”), entries regarding planets ("Earth: Mostly harmless. Except for the moments when it isn’t. Known for its bizarre obsession with paperwork and reality TV."), entries regarding species (Vogon Poetry: The third worst poetry in the universe. Exposure to it can cause extreme nausea, loss of will to live, and in extreme cases, spontaneous self-combustion) and general entries (Towel: The single most massively useful thing an interstellar hitchhiker can carry. It can be used for warmth, defense, signaling, or even as a makeshift flotation device. Most importantly, it makes you look like you know what you're doing). Only approved Authors with a high enough reputation, may add entries to the Guide. Authors. VIPs, who are generally famous persons and not only authors may be given a score, to quickly identify how important they are eg. the president of the galaxy scould have a high score. In addition, we are interested in the travelers using our guide, which may rate the location they visited on a scale from 0 to 100, can rate a location more then once providet at least one 30 standard days passed since the last visit. We need also the time  We are also interested in the Spacecraft they use to travel, in particular how many people it transportred, the amenities of the veichle, and the name of the organizations that produce such spacecraft. We want to know the planet of origin of the travelers, the species they belong to and which planets they visited,
 
+### Structured and organized requirements
+<!-- TODO -->
+
 ### requirements
 
 1. It should be based on a domain containing between 6 and 10 main conceptual entities (i.e., without counting sub-entities that appear in ISAs or generalizations).
@@ -22,13 +25,6 @@ We are interested in the Guide that contains entries helpful for navigating the 
 9. The specification should include a workload of the most common queries and operations (between 5 and 10) that are of interest in the modeled domain, with an indication of their frequency.
 
 ### glossary 
-
-### diagram of the conceptual schema
-![ER-Diagramm](hhgttg-diagramm.drawio.png)
-
-
-### glossary 
-
 | term   | description | synonym | connections |
 | ------ | ----------- | ------- | ----------- |
 | person | persons travel, write articles andor are VIPs | individual | spicies, location, spacecraft |
@@ -45,10 +41,20 @@ We are interested in the Guide that contains entries helpful for navigating the 
 | planet | planets in the universe | world | location |
 | space_station | space stations in the universe | station | location |
 
-
+### diagram of the conceptual schema
+![ER-Diagramm](hhgttg-diagramm.drawio.png)
 
 ### data dictionary
-
-#### Main Entities:
+<!-- TODO -->
 
 ### table of volumes and table of operations according to the foreseen application load
+
+
+### Restructured conceptual scema
+
+![Restructured ER-Diagramm](hhgttg-restructured.drawio.png)
+
+### external constraints
+
+1. Each instance of Entry partecipates to at most one of the relationships ISA-L-E or ISA-P-E or ISA-S-E
+2. Each instance of Location partecipates to exactly one of the relationships ISA-S-L, ISA-P-L
