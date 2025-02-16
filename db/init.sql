@@ -12,7 +12,7 @@ CREATE TABLE Location (
 
 -- Table: Species
 CREATE TABLE Species (
-    sid INT PRIMARY KEY,
+    sid SERIAL PRIMARY KEY,
     name VARCHAR(100),
     traits TEXT,
     avrage_lifespan INT
@@ -20,7 +20,7 @@ CREATE TABLE Species (
 
 -- Table: Person
 CREATE TABLE Person (
-    pid INT PRIMARY KEY,
+    pid SERIAL PRIMARY KEY,
     name VARCHAR(100),
     species INT,
     bornon VARCHAR(100),
@@ -66,7 +66,7 @@ CREATE TABLE Spacecraft (
 
 -- Table: Entry
 CREATE TABLE Entry (
-    ied INT PRIMARY KEY,
+    ied SERIAL PRIMARY KEY,
     title VARCHAR(200),
     text TEXT,
     author INT,
@@ -231,20 +231,20 @@ INSERT INTO SpaceStation (name, purpose, speed) VALUES
 COMMIT;
 
 -- Insert Species
-INSERT INTO Species (sid, name, traits, avrage_lifespan) VALUES 
-(1, 'Human', 'Mostly harmless', 80),
-(2, 'Betelgeusian', 'Two heads, three arms', 150),
-(3, 'Vogon', 'Terrible poetry, bureaucratic', 200),
-(4, 'Magrathean', 'Planet builders', 5000),
-(5, 'Pangalactic', 'Loves strong drinks', 120);
+INSERT INTO Species (name, traits, avrage_lifespan) VALUES 
+('Human', 'Mostly harmless', 80),
+('Betelgeusian', 'Two heads, three arms', 150),
+('Vogon', 'Terrible poetry, bureaucratic', 200),
+('Magrathean', 'Planet builders', 5000),
+('Pangalactic', 'Loves strong drinks', 120);
 
 -- Insert Persons
-INSERT INTO Person (pid, name, species, bornon) VALUES 
-(1, 'Arthur Dent', 1, 'Earth'),
-(2, 'Ford Prefect', 2, 'Betelgeuse V'),
-(3, 'Zaphod Beeblebrox', 2, 'Betelgeuse V'),
-(4, 'Slartibartfast', 4, 'Magrathea'),
-(5, 'Prostetnic Vogon Jeltz', 3, 'Vogon Homeworld');
+INSERT INTO Person (name, species, bornon) VALUES 
+('Arthur Dent', 1, 'Earth'),
+('Ford Prefect', 2, 'Betelgeuse V'),
+('Zaphod Beeblebrox', 2, 'Betelgeuse V'),
+('Slartibartfast', 4, 'Magrathea'),
+('Prostetnic Vogon Jeltz', 3, 'Vogon Homeworld');
 
 -- Insert VIPs
 INSERT INTO Vip (id, importance) VALUES 
@@ -269,11 +269,13 @@ INSERT INTO Spacecraft (name, capacity, amenities, organisation) VALUES
 ('Vogon Destructor Ship', 500, 'Bureaucracy, Bad Poetry', 'Vogon Bureaucracy');
 
 -- Insert Entries (Guide Articles)
-INSERT INTO Entry (ied, title, text, author) VALUES 
-(1, 'Earth', 'Mostly Harmless.', 2),
-(2, 'The Infinite Improbability Drive', 'A revolutionary means of crossing interstellar distances in a mere nothingth of a second.', 2),
-(3, 'The Pan Galactic Gargle Blaster', 'The best drink in existence.', 2),
-(4, 'Vogon Poetry', 'The third worst poetry in the universe.', 2);
+INSERT INTO Entry (title, text, author) VALUES 
+('Earth', 'Mostly Harmless.', 2),
+('The Infinite Improbability Drive', 'A revolutionary means of crossing interstellar distances in a mere nothingth of a second.', 2),
+('The Pan Galactic Gargle Blaster', 'The best drink in existence.', 2),
+('Vogon Poetry', 'The third worst poetry in the universe.', 2);
+
+
 
 -- Insert PersonEntry (Entries about VIPs)
 INSERT INTO PersonEntry (entry, vip) VALUES 
