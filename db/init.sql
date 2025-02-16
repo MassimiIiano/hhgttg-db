@@ -1,4 +1,30 @@
+DO $$ 
+DECLARE 
+    r RECORD;
+BEGIN 
+    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'public') 
+    LOOP 
+        EXECUTE 'DROP TABLE IF EXISTS public.' || r.tablename || ' CASCADE';
+    END LOOP; 
+END $$;
+
+
+DO $$ 
+DECLARE 
+    r RECORD;
+BEGIN 
+    FOR r IN (SELECT tgname, tgrelid::regclass FROM pg_trigger 
+              WHERE NOT tgisinternal) 
+    LOOP 
+        EXECUTE 'DROP TRIGGER IF EXISTS ' || r.tgname || ' ON ' || r.tgrelid;
+    END LOOP; 
+END $$;
+
+
+
 -- Table: Organisation
+
+
 CREATE TABLE Organisation (
     name VARCHAR(100) PRIMARY KEY
 );
@@ -70,9 +96,6 @@ CREATE TABLE Entry (
     title VARCHAR(200),
     text TEXT,
     author INT,
-    FOREIGN KEY (author) REFERENCES Author(id)
-    CONSTRAINT author_exists CHECK (author IN (SELECT id FROM Author))
-    CONSTRAINT autor_has_reputation CHECK (author IN (SELECT id FROM Author WHERE reputation > 50))
     CONSTRAINT unique_text_and_title UNIQUE (title, text)
 );
 
