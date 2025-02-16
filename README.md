@@ -2,13 +2,52 @@
 
 The project aims to be a simplified version of the The Hitchhiker's Guide to the Galaxy
 
-The project was build starting from prof. Cavaleses [project requirements](https://www.inf.unibz.it/~calvanese/teaching/23-24-idb/#project).
+The project was build starting from prof. Cavaleses [project requirements](https://www.inf.unibz.it/~calvanese/teaching/24-25-idb/#project).
 
 ### Specification: The HHGTTG Repository 
 We are interested in the Guide that contains entries helpful for navigating the universe, such entries have to be divided in the entries regarding VIPs (Arthur Dent: A confused Earthman who found himself rather unexpectedly thrust into galactic adventures. Entry notes: “Mostly in search of tea and a decent sandwich.”), entries regarding planets ("Earth: Mostly harmless. Except for the moments when it isn’t. Known for its bizarre obsession with paperwork and reality TV."), entries regarding species (Vogon Poetry: The third worst poetry in the universe. Exposure to it can cause extreme nausea, loss of will to live, and in extreme cases, spontaneous self-combustion) and general entries (Towel: The single most massively useful thing an interstellar hitchhiker can carry. It can be used for warmth, defense, signaling, or even as a makeshift flotation device. Most importantly, it makes you look like you know what you're doing). Only approved Authors with a high enough reputation, may add entries to the Guide. Authors. VIPs, who are generally famous persons and not only authors may be given a score, to quickly identify how important they are eg. the president of the galaxy scould have a high score. In addition, we are interested in the travelers using our guide, which may rate the location they visited on a scale from 0 to 100, can rate a location more then once providet at least one 30 standard days passed since the last visit. We need also the time  We are also interested in the Spacecraft they use to travel, in particular how many people it transportred, the amenities of the veichle, and the name of the organizations that produce such spacecraft. We want to know the planet of origin of the travelers, the species they belong to and which planets they visited,
 
 ### Structured and organized requirements
-<!-- TODO -->
+
+1. **Guide Entries Management**  
+   - The system must manage a repository of entries that provide useful information for navigating the universe.  
+   - The system must classify each entry into one of the following categories:  
+     - VIP entries (for important or famous persons)  
+     - Planet entries  
+     - Species entries  
+     - General entries  
+
+2. **Authorship and Approval**  
+   - The system must restrict the ability to add new entries to approved authors only.  
+   - Approval must be based on criteria ensuring the author’s suitability to contribute to the Guide.
+
+3. **VIPs**  
+   - The system must identify VIPs as persons who hold a notable status (e.g., public figures, high-ranking officials, etc.).  
+   - The system must allow for a measure of importance or significance to be assigned to VIPs.
+
+4. **Travelers and Visits**  
+   - The system must keep track of travelers who make use of the Guide.  
+   - The system must record each traveler’s visits to various locations across the universe.
+
+5. **Ratings and Constraints**  
+   - The system must allow travelers to evaluate or rate a location after visiting it.  
+   - The system must ensure that a traveler can submit multiple ratings for the same location only if certain temporal conditions are met.
+
+6. **Spacecraft**  
+   - The system must keep track of the spacecraft used by travelers for their journeys.  
+   - The system must record details about the organizations responsible for producing these spacecraft.
+
+7. **Species and Origin**  
+   - The system must record the species to which each traveler belongs.  
+   - The system must track the planet of origin for each traveler.
+
+8. **Planetary Information**  
+   - The system must maintain information about the planets in the universe.  
+   - The system must track which travelers have visited which planets.
+
+9. **Temporal Tracking**  
+   - The system must handle the notion of time and ensure time-related rules (e.g., intervals between ratings) are enforced.  
+
 
 ### requirements
 
@@ -141,9 +180,12 @@ Foreign key: manufactured[spacecraft] $\subseteq$ Spacecraft[name] \
 Foreign key: manufactured[organisation] $\subseteq$ Organisation[name]
 
 ### external constraints
-Spacestation[name] $\cap$ Planet[name] = $\emptyset$  \
-Location[name] $\subseteq$ Planet[name] $\cup$ Spacestation[name]\
-LocationEntry[entry] $\cap$ SpeciesEntry[entry] $\cap$ PersonEntry[entry]= $\emptyset$ 
+- Spacestation[name] $\cap$ Planet[name] = $\emptyset$ 
+- Location[name] $\subseteq$ Planet[name] $\cup$ Spacestation[name]
+- LocationEntry[entry] $\cap$ SpeciesEntry[entry] $\cap$ PersonEntry[entry]= $\emptyset$ 
+- Trip[startDate] $<$ Trip[endDate]
+
+
 
 
 #### restructuring of the relation schema
@@ -197,6 +239,7 @@ Foreign key: uses[endDate] $\subseteq$ Trip[endDate]
 
 
 ### external constraints
-Spacestation[name] $\cap$ Planet[name] = $\emptyset$  \
-Location[name] $\subseteq$ Planet[name] $\cup$ Spacestation[name]\
-LocationEntry[entry] $\cap$ SpeciesEntry[entry] $\cap$ PersonEntry[entry]= $\emptyset$ 
+- Spacestation[name] $\cap$ Planet[name] = $\emptyset$ 
+- Location[name] $\subseteq$ Planet[name] $\cup$ Spacestation[name]
+- LocationEntry[entry] $\cap$ SpeciesEntry[entry] $\cap$ PersonEntry[entry]= $\emptyset$ 
+- Trip[startDate] $<$ Trip[endDate]
