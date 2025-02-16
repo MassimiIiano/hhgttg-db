@@ -71,6 +71,9 @@ CREATE TABLE Entry (
     text TEXT,
     author INT,
     FOREIGN KEY (author) REFERENCES Author(id)
+    CONSTRAINT author_exists CHECK (author IN (SELECT id FROM Author))
+    CONSTRAINT autor_has_reputation CHECK (author IN (SELECT id FROM Author WHERE reputation > 50))
+    CONSTRAINT unique_text_and_title UNIQUE (title, text)
 );
 
 -- Table: PersonEntry
