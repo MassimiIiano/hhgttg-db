@@ -31,7 +31,7 @@ We are interested in the Guide that contains entries helpful for navigating the 
    - The system must record the planet of origin for each traveler.
 
 5. **Ratings and Constraints**  
-   - The system must allow travelers to evaluate or rate a location after visiting it.  
+   - The system must allow travelers to evaluate or rate a location after visiting it (from 0 to 100).  
    - The system must ensure that a traveler can submit multiple ratings for the same location only if certain temporal conditions are met.
 
 6. **Spacecraft**  
@@ -179,6 +179,7 @@ Below are five of the most common operations that the system is expected to perf
 1. Each instance of Entry partecipates to at most one of the relationships ISA-L-E or ISA-P-E or ISA-S-E
 2. Each instance of Location partecipates to exactly one of the relationships ISA-S-L, ISA-P-L
 3. In each instance of Trip startDate must be erlier than endDate
+4. the rating in Trip and location must be between 0 and 100
 
 ### translation
 Entry(<u>ied</u>, title, text)
@@ -267,6 +268,7 @@ Foreign key: manufactured[organisation] $\subseteq$ Organisation[name]
 - Location[name] $\subseteq$ Planet[name] $\cup$ Spacestation[name]
 - LocationEntry[entry] $\cap$ SpeciesEntry[entry] $\cap$ PersonEntry[entry]= $\emptyset$ 
 - Trip[startDate] $<$ Trip[endDate]
+- the rating in Trip and location must be between 0 and 100
 
 
 
@@ -328,3 +330,4 @@ Foreign key: uses[endDate] $\subseteq$ Trip[endDate]
 - Location[name] $\subseteq$ Planet[name] $\cup$ Spacestation[name]
 - LocationEntry[entry] $\cap$ SpeciesEntry[entry] $\cap$ PersonEntry[entry]= $\emptyset$ 
 - Trip[startDate] $<$ Trip[endDate]
+- the rating in Trip and location must be between 0 and 100
