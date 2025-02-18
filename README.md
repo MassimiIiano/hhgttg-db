@@ -1,5 +1,11 @@
 # Introduction to Databases Project
 
+Author: [Massimiliano Mola](https://github.com/MassimiIiano) Student Nr. 23026 
+
+Compleated on 16.02.2025
+
+</br>
+
 The project aims to be a simplified version of the The Hitchhiker's Guide to the Galaxy
 
 The project was build starting from prof. Cavaleses [project requirements](https://www.inf.unibz.it/~calvanese/teaching/24-25-idb/#project).
@@ -61,19 +67,15 @@ Below are five of the most common operations that the system is expected to perf
 2. **Recording a Traveler's Trip**  
    - insert a new record into the `Trip` table to represent a traveler's journey.
 
-3. **Submitting a Location Rating**  
-   - Allow a traveler to rate a location (e.g., a planet or space station) after a visit.  
-   - Ensure that at least 30 standard days have passed since the traveler's last rating for the same location before accepting a new rating.  
-   - Update the location's rating accordingly.
+3. **query the most visited location in a sector**
 
 4. **Managing Spacecraft Usage**  
    - Track which spacecraft a traveler uses during a trip.  
    - Capture spacecraft details such as `name`, `capacity`, `amenities`, and the associated manufacturing `organisation`. 
 
-5. **Querying and Retrieving Guide Information**  
-   - Retrieve entries based on various criteria (e.g., by category: VIP, planet, species, or general).  
-   - Enable filtering of entries by attributes like ratings, author, or related location.  
-   - Support navigation and discovery functions within the guide for both end-users and administrators.
+5. **Querying and Entries abuot a location**  
+   - Retrieve entries based on various criteria (e.g., by category: VIP, location, species, or general).  
+   - Enable filtering of entries by attributes like ratings, author, or related location.
 
 ### glossary 
 | term   | description | synonym | connections |

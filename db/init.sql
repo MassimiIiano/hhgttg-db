@@ -226,6 +226,45 @@ AFTER INSERT OR UPDATE ON SpeciesEntry
 FOR EACH ROW EXECUTE FUNCTION enforce_entry_disjointness();
 
 
+-- Procedure to submit a location rating
+CREATE OR REPLACE FUNCTION submit_location_rating(
+    traveler_id INT, 
+    location_name VARCHAR(100), 
+    new_rating INT
+) RETURNS TEXT AS $$
+DECLARE
+    last_rating_date DATE;
+BEGIN
+    -- Check if the new rating is within the valid range (0 to 100)
+    IF new_rating < 0 OR new_rating > 100 THEN
+        RETURN 'Error: Rating must be between 0 and 100.';
+    END IF;
+
+    -- Get the date of the traveler's last rating for this location
+    SELECT MAX(endDate) INTO last_rating_date
+    FROM Trip
+    WHERE person = traveler_id AND location = location_name;
+
+    -- If the traveler has never rated this location, allow the rating
+    IF last_rating_date IS NULL THEN
+        UPDATE Location
+        SET rating = new_rating
+        WHERE name = location_name;
+        RETURN 'Rating submitted successfully.';
+    END IF;
+
+    -- Check if at least 30 days have passed since the last rating
+    IF (CURRENT_DATE - last_rating_date) >= 30 THEN
+        UPDATE Location
+        SET rating = new_rating
+        WHERE name = location_name;
+        RETURN 'Rating submitted successfully.';
+    ELSE
+        RETURN 'Error: You must wait at least 30 days before submitting another rating for this location.';
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
 
 -- Insert Organisations
 INSERT INTO Organisation (name) VALUES 
