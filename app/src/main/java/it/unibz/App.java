@@ -49,6 +49,14 @@ public class App {
                         getEntries(conn, keyword);
                         break;
                     case "3":
+                        System.out.print("Enter author ID: "); 
+                        int aid = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.print("Enter title: ");
+                        String title = scanner.nextLine();
+                        System.out.print("Enter text: ");
+                        String text = scanner.nextLine();
+                        addGeneralEntry(conn, aid, title, text);
                         break;
                 
                     case "4":
@@ -125,7 +133,22 @@ public class App {
         }
     }
 
-    static void addGeneralEntry(Connection c, String author, String title, String text) {}
+    static void addGeneralEntry(Connection c, int authorID, String title, String text) {
+        String query = "INSERT INTO Entry (author, title, text) VALUES (?, ?, ?)";
+        try (PreparedStatement pstmt = c.prepareStatement(query)) {
+            pstmt.setInt(1, authorID);
+            pstmt.setString(2, title);
+            pstmt.setString(3, text);
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("\nGeneral entry added successfully!\n");
+            } else {
+                System.out.println("\nFailed to add general entry.\n");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error adding general entry: " + e.getMessage());
+        }
+    }
 
     static void bestLocationInSector(Connection c, String sector) {
         String query = "SELECT name, rating FROM Location " +
