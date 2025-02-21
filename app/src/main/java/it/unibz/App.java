@@ -43,6 +43,13 @@ public class App {
                         // insert the trip
                         insertTrip(conn, pid, location, start, end, score);
                         break;
+                    case "2":
+                        System.out.print("Enter a keyword: ");
+                        String keyword = scanner.nextLine();
+                        getEntries(conn, keyword);
+                        break;
+                    case "3":
+                        break;
                 
                     case "4":
                         System.out.print("Enter sector name: ");
@@ -52,11 +59,9 @@ public class App {
                     default:
                         System.out.println( "'"+  input + "'" + " is an invalid command, try again");
                         break;
-                }
-
-                scanner.close();
-
+                }                
             }
+            scanner.close();
 
         } catch (SQLException e) {
             System.err.println("Connection failed: " + e.getMessage());
@@ -78,16 +83,47 @@ public class App {
             // Execute the insert statement
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
-                System.out.println("Trip inserted successfully!");
+                System.out.println("\nTrip inserted successfully!\n");
             } else {
-                System.out.println("Failed to insert trip.");
+                System.out.println("\nFailed to insert trip.\n");
             }
         } catch (SQLException e) {
             System.err.println("Failed to insert trip: " + e.getMessage());
         }
     }
 
-    static void getEntries(Connection c, String keyword) {}
+    public static void getEntries(Connection c, String keyword) throws SQLException {
+        String sql = """
+            SELECT DISTINCT e.title, e.text
+            FROM Entry e
+            LEFT JOIN LocationEntry le ON e.ied = le.entry
+            LEFT JOIN PersonEntry pe ON e.ied = pe.entry
+            LEFT JOIN SpeciesEntry se ON e.ied = se.entry
+            LEFT JOIN Person p ON pe.vip = p.pid
+            LEFT JOIN Species s ON se.species = s.sid
+            WHERE e.title LIKE ?
+                OR (le.location LIKE ? AND le.location IS NOT NULL)
+                OR (p.name LIKE ? AND p.name IS NOT NULL)
+                OR (s.name LIKE ? AND s.name IS NOT NULL)
+            """;
+
+        try (var stmt = c.prepareStatement(sql)) {
+            String searchKeyword = "%" + keyword + "%";
+            for (int i = 1; i <= 4; i++) {
+                stmt.setString(i, searchKeyword);
+            }
+
+            System.out.println("------------------------------");
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    System.out.println("Title: " + rs.getString("title"));
+                    System.out.println("Text: " + rs.getString("text"));
+                    System.out.println("------------------------------");
+                }
+            }
+            System.out.println();
+        }
+    }
 
     static void addGeneralEntry(Connection c, String author, String title, String text) {}
 
@@ -109,11 +145,13 @@ public class App {
                     return;
                 }
                 
+                System.out.println();
                 while (rs.next()) {
                     String name = rs.getString("name");
                     int rating = rs.getInt("rating");
                     System.out.printf("- %s (Rating: %d)%n", name, rating);
                 }
+                System.out.println();
             }
         } catch (SQLException e) {
             System.err.println("Error fetching locations: " + e.getMessage());

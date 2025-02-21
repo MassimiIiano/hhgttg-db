@@ -72,6 +72,7 @@ CREATE TABLE Entry (
     title VARCHAR(200),
     text TEXT,
     author INT,
+    FOREIGN KEY (author) REFERENCES Author(id),
     CONSTRAINT unique_text_and_title UNIQUE (title, text)
 );
 
