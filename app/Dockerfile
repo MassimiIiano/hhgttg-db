@@ -1,5 +1,5 @@
 # language: dockerfile
-FROM python
+FROM java
 
 WORKDIR /usr/src/app
 

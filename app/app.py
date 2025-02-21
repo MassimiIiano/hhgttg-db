@@ -12,6 +12,7 @@ try:
         host="db",
         port="5432"
     )
+    
 except psycopg2.DatabaseError as e:
     print(f"Error: {e}")
     if conn:
